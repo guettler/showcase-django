@@ -86,5 +86,5 @@ jobs:
       - name: Add Heroku remote
         run: heroku git:remote --app images4u
       - name: Push to Heroku
-        run: git push heroku HEAD:master
+        run: git push heroku main
 
