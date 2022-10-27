@@ -57,10 +57,11 @@ jobs:
       #----------------------------------------------
       #              Test and build frontend
       #----------------------------------------------
-      - name: Test and build frontend
+      - name: Setup node environment
         uses: actions/setup-node@v1
         with:
           node-version: 17.3.0
+      - name: Test and build frontend
         run: |
           cd frontend_react
           npm install

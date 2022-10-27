@@ -16,12 +16,12 @@ $ poetry install
 
 ### Development mode
 ```sh
-$ python manage.py runserver
+$ poetry run python backend\manage.py runserver
 ```
 
 ### Testing
 ```sh
-$ pytest tests
+$ poetry run pytest backend\tests
 ```
 
 ## Frontend
