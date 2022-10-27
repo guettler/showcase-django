@@ -2,9 +2,25 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import click
+from django.core.wsgi import get_wsgi_application
+from waitress import serve
 
 
-def main():
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+def server():
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "showcase_django.settings")
+    application = get_wsgi_application()
+    serve(application, port='8000')
+
+
+@cli.command()
+def runserver():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'showcase_django.settings')
     try:
@@ -19,4 +35,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    cli()

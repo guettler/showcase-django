@@ -2,6 +2,7 @@ import json
 
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -56,3 +57,5 @@ def image_descriptions(request):
             "title": 'Bike',
         },
     ]), content_type='application/json; charset=utf8', safe=False)
+
+

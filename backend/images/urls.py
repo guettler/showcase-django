@@ -17,5 +17,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('descriptions', views.image_descriptions, name="descriptions")
+    path('descriptions/', views.image_descriptions, name="descriptions")
 ]
