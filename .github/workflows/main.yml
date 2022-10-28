@@ -63,7 +63,6 @@ jobs:
           node-version: 17.3.0
       - name: Test and build frontend
         run: |
-          cd frontend_react
           npm install
           npm test -- --watchAll=false
           npm run build
