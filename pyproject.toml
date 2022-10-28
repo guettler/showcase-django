@@ -5,7 +5,7 @@ description = "Django pipeline showcase"
 authors = ["Nico Guettler"]
 
 [tool.poetry.dependencies]
-python = "^3.10.2"
+python = "3.10.8"
 attrs = "^21.4.0"
 pydantic = "^1.9.1"
 Django = "^4.1.2"
