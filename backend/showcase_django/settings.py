@@ -22,7 +22,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -65,9 +66,12 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [FRONTEND_DIR / 'build' / 'static']
 
 WSGI_APPLICATION = 'showcase_django.wsgi.application'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Database
